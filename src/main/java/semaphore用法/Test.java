@@ -4,6 +4,17 @@ import java.util.concurrent.Semaphore;
 
 /**
  *
+ * Semaphore是一种基于计数的信号量。它可以设定一个阈值，基于此，多个线程竞争获取许可信号，
+ * 做自己的申请后归还，超过阈值后线程申请许可信号将会被阻塞。
+ * Semaphore可以用来构建一些对象池，资源池之类的，比如数据库连接池，
+ * 我们也可以创建计数为1的Semaphore，将其作为一种类似互斥锁的机制，这也叫二元信号量，表示两种互斥状态。它的用法如下：
+ * availablePermits函数用来获取当前可用的资源数量，
+ * wc.acquire(); //申请资源
+ * wc.release();// 释放资源
+ *
+ *
+ *
+ *
  * Semaphore翻译成字面意思为 信号量，
  * Semaphore可以控制同时访问的线程个数，通过 acquire() 获取一个许可，如果没有就等待，而 release() 释放一个许可。
  *
@@ -27,10 +38,17 @@ import java.util.concurrent.Semaphore;
  *
  *  　　这4个方法都会被阻塞，如果想立即得到执行结果，可以使用下面几个方法：
  *
- *  public boolean tryAcquire() { };    //尝试获取一个许可，若获取成功，则立即返回true，若获取失败，则立即返回false
- *  public boolean tryAcquire(long timeout, TimeUnit unit) throws InterruptedException { };  //尝试获取一个许可，若在指定的时间内获取成功，则立即返回true，否则则立即返回false
- *  public boolean tryAcquire(int permits) { }; //尝试获取permits个许可，若获取成功，则立即返回true，若获取失败，则立即返回false
- *  public boolean tryAcquire(int permits, long timeout, TimeUnit unit) throws InterruptedException { }; //尝试获取permits个许可，若在指定的时间内获取成功，则立即返回true，否则则立即返回false
+ *  public boolean tryAcquire() { };
+ *  //尝试获取一个许可，若获取成功，则立即返回true，若获取失败，则立即返回false
+ *
+ *  public boolean tryAcquire(long timeout, TimeUnit unit) throws InterruptedException { };
+ *  //尝试获取一个许可，若在指定的时间内获取成功，则立即返回true，否则则立即返回false
+ *
+ *  public boolean tryAcquire(int permits) { };
+ *  //尝试获取permits个许可，若获取成功，则立即返回true，若获取失败，则立即返回false
+ *
+ *  public boolean tryAcquire(int permits, long timeout, TimeUnit unit) throws InterruptedException { };
+ *  //尝试获取permits个许可，若在指定的时间内获取成功，则立即返回true，否则则立即返回false
  *
  *  　　另外还可以通过availablePermits()方法得到可用的许可数目。
  *
@@ -61,33 +79,6 @@ public class Test {
 		Semaphore semaphore = new Semaphore(5);
 		for(int i = 0; i < N ; i++){
 			new Worker(i, semaphore).start();
-		}
-		
-	}
-	
-}
-
-class Worker extends Thread{
-
-	private int num;
-
-	private Semaphore semaphore;
-
-	public Worker(int num, Semaphore semaphore){
-		this.num = num;
-		this.semaphore = semaphore;
-	}
-
-	@Override
-	public void run() {
-		try {
-			semaphore.acquire();
-			System.out.println(" 线程 : " + Thread.currentThread().getName() + " 工人 : " + num + " 占用了一个机器在生产... ");
-			Thread.sleep(2000);
-			System.out.println(" 线程 : " + Thread.currentThread().getName() + " 工人 : " + num + " 释放出机器.... ");
-			semaphore.release();
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 		
 	}
