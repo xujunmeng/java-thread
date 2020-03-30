@@ -1,4 +1,4 @@
-package linkedBockingQueue;
+package 阻塞队列和生产者消费者模式.linkedBockingQueue;
 
 import java.util.concurrent.LinkedBlockingQueue;
 /**

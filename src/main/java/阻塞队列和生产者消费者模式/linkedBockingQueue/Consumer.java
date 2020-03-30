@@ -1,4 +1,4 @@
-package linkedBockingQueue;
+package 阻塞队列和生产者消费者模式.linkedBockingQueue;
 /**
 @author junmeng.xu
 @date  2016年8月19日上午10:14:50
