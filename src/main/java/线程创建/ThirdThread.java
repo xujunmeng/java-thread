@@ -1,10 +1,6 @@
 package 线程创建;
 
-import org.junit.Test;
-
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 /**
@@ -15,7 +11,6 @@ import java.util.concurrent.FutureTask;
  */
 public class ThirdThread {
 
-    @Test
     public void test() throws ExecutionException, InterruptedException {
         FutureTask<Integer> task = new FutureTask<>(() -> {
             int i = 1;

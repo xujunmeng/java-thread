@@ -1,7 +1,5 @@
 package 线程睡眠;
 
-import org.junit.Test;
-
 import java.util.Date;
 
 /**
@@ -14,7 +12,6 @@ import java.util.Date;
  */
 public class SleepTest {
 
-    @Test
     public void test() throws InterruptedException {
         for (int i = 0; i < 10; i++) {
             System.out.println("当前时间 : " + new Date());

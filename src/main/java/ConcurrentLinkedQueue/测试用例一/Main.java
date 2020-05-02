@@ -1,7 +1,5 @@
 package ConcurrentLinkedQueue.测试用例一;
 
-import org.junit.Test;
-
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -56,7 +54,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 public class Main {
 
-    @Test
     public void test1() {
         ConcurrentLinkedQueue queue = new ConcurrentLinkedQueue();
         queue.offer("哈哈哈");
@@ -66,7 +63,6 @@ public class Main {
         System.out.println("pool后，队列是否空? : " + queue.isEmpty());
     }
 
-    @Test
     public void test2() {
         ConcurrentLinkedQueue queue = new ConcurrentLinkedQueue();
         queue.offer("哈哈哈");
@@ -77,7 +73,6 @@ public class Main {
         System.out.println("pool后，队列是否空？" + queue.isEmpty());
     }
 
-    @Test
     public void test3() {
         ConcurrentLinkedQueue queue = new ConcurrentLinkedQueue();
         queue.offer("哈哈哈");
@@ -87,7 +82,6 @@ public class Main {
         System.out.println("remove后，队列是否空？" + queue.isEmpty());
     }
 
-    @Test
     public void test4() {
         ConcurrentLinkedQueue queue = new ConcurrentLinkedQueue();
         queue.offer("123");
@@ -95,7 +89,6 @@ public class Main {
         System.out.println(queue.contains("456"));
     }
 
-    @Test
     public void test5() {
         ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
         queue.offer("123");
@@ -109,7 +102,6 @@ public class Main {
         System.out.println(strs[0] + ", " + strs[1]);
     }
 
-    @Test
     public void test6() {
         ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
         queue.offer("123");
