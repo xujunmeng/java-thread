@@ -24,7 +24,7 @@ public class DrawThread extends Thread {
 	//重复100次执行取钱操作
 	@Override
 	public void run(){
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 2; i++) {
 			account.draw(drawAmount);
 		}
 	}
