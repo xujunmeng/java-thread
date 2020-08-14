@@ -75,7 +75,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		int N = 8;
+		int N = 10;
 		Semaphore semaphore = new Semaphore(5);
 		for(int i = 0; i < N ; i++){
 			new Worker(i, semaphore).start();
