@@ -1,5 +1,7 @@
 package 手动实现线程池;
 
+import 手动实现线程池.queue.RunnableQueue;
+
 /**
  * 定义一个InternalTask，主要用于线程池内部，该类会用到RunnableQueue，
  * 不断从queue中取出某个Runnable,并执行器run方法。

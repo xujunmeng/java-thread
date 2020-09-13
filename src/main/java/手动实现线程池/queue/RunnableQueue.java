@@ -1,4 +1,4 @@
-package 手动实现线程池;
+package 手动实现线程池.queue;
 
 /**
  * 定义一个任务队列RunnableQueue

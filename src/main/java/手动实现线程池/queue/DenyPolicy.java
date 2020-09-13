@@ -1,4 +1,6 @@
-package 手动实现线程池;
+package 手动实现线程池.queue;
+
+import 手动实现线程池.threadpoll.ThreadPool;
 
 /**
  * 定义一个拒绝策略DenyPolicy
