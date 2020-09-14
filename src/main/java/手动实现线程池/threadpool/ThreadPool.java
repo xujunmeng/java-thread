@@ -1,4 +1,4 @@
-package 手动实现线程池.threadpoll;
+package 手动实现线程池.threadpool;
 
 /**
  * 定义一个ThreadPool接口

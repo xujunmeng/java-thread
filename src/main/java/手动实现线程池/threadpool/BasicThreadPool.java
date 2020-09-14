@@ -1,4 +1,4 @@
-package 手动实现线程池.threadpoll;
+package 手动实现线程池.threadpool;
 
 import 手动实现线程池.*;
 import 手动实现线程池.queue.DenyPolicy;

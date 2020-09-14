@@ -1,7 +1,7 @@
 package 手动实现线程池;
 
-import 手动实现线程池.threadpoll.BasicThreadPool;
-import 手动实现线程池.threadpoll.ThreadPool;
+import 手动实现线程池.threadpool.BasicThreadPool;
+import 手动实现线程池.threadpool.ThreadPool;
 
 import java.util.concurrent.TimeUnit;
 
