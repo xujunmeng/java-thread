@@ -101,8 +101,9 @@ public class BasicThreadPool extends Thread implements ThreadPool {
                     break;
             }
             synchronized (this) {
-                if(isShutdown)
+                if(isShutdown) {
                     break;
+                }
                 //当前队列中有任务尚未处理，并且activeCount < coreSize则继续扩容
                 if(runnableQueue.size() > 0 && activeCount < coreSize){
                     for(int i = initSize; i < coreSize; i++){
@@ -113,13 +114,15 @@ public class BasicThreadPool extends Thread implements ThreadPool {
                 }
                 //当前的队列中有任务尚未处理，并且activeCount < maxSize则继续扩容
                 if(runnableQueue.size() > 0 && activeCount < maxSize){
-                    for(int i = coreSize; i < maxSize; i++)
+                    for(int i = coreSize; i < maxSize; i++) {
                         newThread();
+                    }
                 }
                 //如果队列中没有任务，则需要回收，回收到coreSize即可
                 if(runnableQueue.size() == 0 && activeCount > coreSize){
-                    for (int i = coreSize; i < activeCount; i++)
+                    for (int i = coreSize; i < activeCount; i++) {
                         removeThread();
+                    }
                 }
             }
         }
