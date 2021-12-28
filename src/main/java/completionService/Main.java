@@ -26,7 +26,6 @@ public class Main {
 					int ran = new Random().nextInt(100);
 					Thread.sleep(ran);
 					System.out.println(Thread.currentThread().getName() + " 休息了 " + ran);
-					int aaa = 0/0;
 					return ran;
 				} catch (Exception e) {
 					throw new RuntimeException("模拟运行时异常");
@@ -47,5 +46,6 @@ public class Main {
 		}
 
 		exec.shutdown();
+		System.out.println("操作完了");
 	}
 }
