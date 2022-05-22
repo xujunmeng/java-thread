@@ -20,7 +20,6 @@ public class TestMain {
         list.add(str);
         list.add(str);
         list.add(str);
-        int a = 1 / 0;
         return list;
     }
 
@@ -39,6 +38,7 @@ public class TestMain {
     }
 
     public List<String> test3(String str) {
+        int a = 1 / 0;
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
